@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  font-family: "papyrus";
+  border-radius: 5%
 }
 
 .App-logo {
@@ -15,7 +17,7 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,4 +37,60 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+main {
+  padding-top: 1rem;
+}
+
+span {
+  font-weight: bold;
+}
+
+.cards{
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: 100%;
+  justify-content: center;
+}
+
+.card {
+  background: linear-gradient(to bottom right, #330066, #5c00e6, #0000cc, #330066);
+  box-shadow: 3px 3px 6px 1px rgba(0, 0, 0, 0.36);
+  border: solid black 1px;
+  padding: 5px;
+  width: 25%;
+  margin: 2rem;
+  border-radius: 5%;
+}
+
+.top {}
+
+.name {
+  border: solid black 2px;
+  border-radius: 4px;
+  background-color: rgba(77, 51, 25, 0.3);
+  color: white;
+  display: inline-block;
+  padding: 11px;
+  box-sizing: border-box;
+}
+
+.top img {
+  max-width: 100%;
+  border-radius: 4px;
+  box-shadow: 3px 3px 2px 0px rgba(0, 0, 0, 0.17);
+  border: solid black 2px;
+  margin: 5px;
+}
+
+.name h3 {
+  font-size: 25px;
+  display: inline-block;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.picOfCurrency {
+  max-width: 150px;
 }
