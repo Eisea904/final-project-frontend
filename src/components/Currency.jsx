@@ -9,30 +9,29 @@ class Currency extends React.Component{
     }
 
     componentDidMount(){  
-      // console.log(this.props.shops)
+      console.log(this.props.shops)
       if(this.props.shops[0]) {
         let party = this.props.shops.filter(shop => {
           if(shop.id === 1){
-            // console.log(this.props.shops)
             return shop
           } 
         })
+        console.log(this.props.shops)
         this.setState({
-          roses: party.roses,
-          electrum: party.electrum
+          roses: party[0].roses,
+          electrum: party[0].electrum
         })
-      } else {
+      } else
+       {
         this.setState({
           roses: 0,
           electrum: 0
         })
       }
-      // console.log(this.state)
     }
 
 
     render(){
-      // console.log(this.state)
       return(
         <div>
           

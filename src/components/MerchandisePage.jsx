@@ -39,7 +39,7 @@ class MerchandisePage extends React.Component{
     }
 
     render(){
-      console.log(this.props)
+      // console.log(this.props)
       let searchTerm = this.state.searchTerm
       // let selectedShop = this.props.selectedShop
       let filteredItemArray = []

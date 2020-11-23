@@ -71,7 +71,8 @@ class ShopParent extends React.Component {
 
     filterSelectedShopItemsForState = (selectedItemId, selectedShop) => {
       let itemIndexToDelete = selectedItemId - 1
-      let editedSelectedShop = selectedShop.items.splice(itemIndexToDelete, 1)
+      let copyOfSelectedShop = selectedShop
+      let editedSelectedShop = copyOfSelectedShop.items.splice(itemIndexToDelete, 1)
 
       let shopsAfterDeleteOfAShopItem = this.state.shops.map(shop => {
         if(shop.id === selectedShop.id){
@@ -87,7 +88,8 @@ class ShopParent extends React.Component {
 
     filterAllItemsForStateAfterDelete = (selectedItemId) => {
       let indexOfItemToDelete = selectedItemId - 1
-      let newAllItems = this.state.allItems.splice(indexOfItemToDelete, 1)
+      let copyOfAllItems = this.state.allItems
+      let newAllItems = copyOfAllItems.splice(indexOfItemToDelete, 1)
       this.setState({
         allItems: newAllItems
       })
@@ -115,7 +117,7 @@ class ShopParent extends React.Component {
     }
 
     render() {
-      
+      console.log(this.state.shops)
       return (
         <div className="App">
           <header className="App-header">
