@@ -1,5 +1,7 @@
 import React from 'react'
+// import Currency from './Currency'
 import {NavLink} from 'react-router-dom'
+
 class Header extends React.Component{
 
     render(){
@@ -10,6 +12,7 @@ class Header extends React.Component{
         return (
           <div>
             <header>
+              {/* <Currency shop={this.props.playerParty}/>  */}
               <h4 className="header links">{linkShopSelectPage}</h4>
               <h4 className="header links">{linkAllItemsPage}</h4>
               <h4 className="header links">{linkPartyInventory}</h4>

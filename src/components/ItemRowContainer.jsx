@@ -5,7 +5,9 @@ import ItemRow from './ItemRow'
 const ItemRowContainer = (props) => {
 
     let itemRows = props.filteredItemArray.map(itemRow => {
-      return <ItemRow key={itemRow.id} itemRow={itemRow} addNewInventoryItem={props.addNewInventoryItem} removeInventoryItem={props.removeInventoryItem} shops={props.shops} />
+      return <ItemRow key={itemRow.id} itemRow={itemRow} addNewInventoryItem={props.addNewInventoryItem} 
+        removeInventoryItem={props.removeInventoryItem} shops={props.shops} updateItemPlotMagicalInState={props.updateItemPlotMagicalInState} 
+      />
     })
 
     // let itemRows = props.selectedShop.items.map(itemRow => {

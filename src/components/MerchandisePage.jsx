@@ -26,7 +26,6 @@ class MerchandisePage extends React.Component{
       })
       .then(resp => resp.json())
       .then(() => {
-        // debugger
         let selectedShop = this.props.selectedShop
         this.props.filterSelectedShopItemsForState(selectedItemId, selectedShop)
       })
@@ -51,15 +50,19 @@ class MerchandisePage extends React.Component{
 
 
       return(
-
         <main>
+          <>
           <Search searchTerm={this.state.searchTerm} changeSearchTerm={this.changeSearchTerm}/>
+          </>
           {/* <FilterMagical /> */}
           {/* <ItemRowContainer currentShop={this.state.currentShop}/> */}
           {this.props.selectedShop ?
             <>
               <Bio selectedShop={this.props.selectedShop}/>
-              <ItemRowContainer shops={this.props.shops} filteredItemArray={filteredItemArray} addNewInventoryItem={this.props.addNewInventoryItem} removeInventoryItem={this.removeInventoryItem}/>
+              <ItemRowContainer shops={this.props.shops} filteredItemArray={filteredItemArray} 
+                addNewInventoryItem={this.props.addNewInventoryItem} removeInventoryItem={this.removeInventoryItem}
+                updateItemPlotMagicalInState={this.props.updateItemPlotMagicalInState}
+              />
             </>
           :<p>page loading</p> }
         </main>

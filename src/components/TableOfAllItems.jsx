@@ -2,9 +2,11 @@ import React from 'react'
 import AllItemsTableRow from './AllItemsTableRow'
 
 const TableOfAllItems = (props) => {
-console.log(props.filteredItems)
+// console.log(props.filteredItems)
     let allItemsTableRows = props.filteredItems.map(itemRow => {
-        return <AllItemsTableRow key={itemRow.id} itemRow={itemRow} addNewInventoryItem={props.addNewInventoryItem} removeInventoryItem={props.removeInventoryItem} shops={props.shops} />
+        return <AllItemsTableRow key={itemRow.id} itemRow={itemRow} addNewInventoryItem={props.addNewInventoryItem} removeInventoryItem={props.removeInventoryItem} 
+          shops={props.shops} updateItemPlotMagicalInState={props.updateItemPlotMagicalInState}
+        />
       })
 
     return (

@@ -19,10 +19,14 @@ class NewItemForm extends React.Component{
 
     handleSubmit = (evt) => {
       evt.preventDefault()
+      console.log(this.state.description)
       let {plot, magical, item_name, description, weight, cost} = this.state
-      fetch("http://localhost:3000/items/", {
+      fetch("http://localhost:3000/items", {
         method: "POST",
-        headers: {"content-type": "application/json"},
+        headers: {
+          "content-type": "application/json",
+          "Accept": "application/json"
+        },
         body: JSON.stringify({
           plot,
           magical,
@@ -34,6 +38,7 @@ class NewItemForm extends React.Component{
       })
       .then(res => res.json())
       .then(newAllItemsTableRow => {
+        console.log(newAllItemsTableRow)
         this.props.addAllItemsTableRow(newAllItemsTableRow)
       })
     }
@@ -46,7 +51,7 @@ class NewItemForm extends React.Component{
             <div className="inline fields">
               <input type="boolean" name="plot" placeholder="plot? true/false" value={this.state.plot} onChange={this.handleInputChange} />
               <input type="boolean" name="magical" placeholder="magical?  true/false" value={this.state.magical} onChange={this.handleInputChange} />
-              <input type="text" name="itemName" placeholder="Item Name" value={this.state.itemName} onChange={this.handleInputChange} />
+              <input type="text" name="item_name" placeholder="Item Name" value={this.state.item_name} onChange={this.handleInputChange} />
               <input type="text" name="description" placeholder="Description" value={this.state.description} onChange={this.handleInputChange} />
               <input type="number" name="price" placeholder="Price" value={this.state.price} onChange={this.handleInputChange} />
               <input type="number" name="weight" placeholder="Weight" value={this.state.weight} onChange={this.handleInputChange} />
